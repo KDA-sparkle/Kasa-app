@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Property from "./pages/Property";
-import Error404 from "./pages/Error404";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Home from "./Pages/Accueil/Accueil";
+import Apropos from "./Pages/Apropos/Apropos";
+import Logement from "./Pages/Logement/Logement";
+import Error404 from "./Pages/Error404/Error404";
+import Header from "./Layout/Header/Header";
+import Footer from "./Layout/Footer/Footer";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/property/:id" element={<Property />} />
-        <Route path="*" element={<Error404 />} /> {/* Page 404 par défaut */}
+        <Route path="/apropos" element={<Apropos />} />
+        <Route path="/logement/:id" element={<Logement />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
     </Router>
