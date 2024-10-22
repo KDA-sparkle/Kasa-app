@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/property/:id" element={<Property />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="*" element={<Error404 />} /> {/* Page 404 par défaut */}
       </Routes>
       <Footer />
     </Router>
