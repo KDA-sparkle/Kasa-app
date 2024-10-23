@@ -1,0 +1,28 @@
+// main.scss
+
+// Importer des fichiers de styles
+@import "../components/Card/card.module.scss";
+@import "../components/Collapse/collapse.module.scss";
+@import "../components/Gallery/gallery.module.scss";
+@import "../components/Rate/rate.module.scss";
+@import "../components/Tag/tag.module.scss";
+@import "../components/User/user.module.scss";
+
+// Styles globaux
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

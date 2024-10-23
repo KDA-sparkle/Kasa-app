@@ -12,7 +12,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "watch-css": "sass src/styles/main.scss src/styles/main.css --watch"
   },
   "eslintConfig": {
     "extends": [
