@@ -1,17 +1,15 @@
 import React, { useState } from "react";
+import styled from "./collapse.module.scss";
 
-function Collapse({ title, content }) {
+const Collapse = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="collapse">
-      <div className="collapse-header" onClick={() => setIsOpen(!isOpen)}>
-        <h4>{title}</h4>
-        <span>{isOpen ? "-" : "+"}</span>
-      </div>
-      {isOpen && <div className="collapse-content">{content}</div>}
+    <div className={styled.collapse}>
+      <button onClick={() => setIsOpen(!isOpen)}>{title}</button>
+      {isOpen && <div className={styled.content}>{children}</div>}
     </div>
   );
-}
+};
 
 export default Collapse;
