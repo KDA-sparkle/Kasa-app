@@ -1,20 +1,27 @@
 {
-  "name": "kasa",
+  "name": "kasa-app",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
-  },
-  "devDependencies": {
-    "vite": "^2.9.9",
-    "sass": "^1.32.13"
+    "react-router-dom": "^6.11.1",
+    "vite": "^4.0.0",
+    "@vitejs/plugin-react": "^3.0.0"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "build-css": "sass src/sass/main.scss src/css/main.css"
+    "serve": "vite preview"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "devDependencies": {
+    "sass": "^1.62.1",
+    "axios": "^1.4.0"
   }
 }
