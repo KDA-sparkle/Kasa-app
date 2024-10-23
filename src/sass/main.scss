@@ -1,0 +1,28 @@
+// main.scss
+
+// Importer des fichiers de styles
+@import "card";
+@import "collapse";
+@import "gallery";
+@import "rate";
+@import "tag";
+@import "user";
+
+// Styles globaux
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
