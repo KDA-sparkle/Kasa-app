@@ -1,27 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+import logements from "../../../public/logements.json";
+import { Link } from "react-router-dom";
+import styled from "./gallery.module.scss";
 
-function Gallery({ pictures }) {
-  const [current, setCurrent] = useState(0);
-
-  const nextImage = () => {
-    setCurrent((prev) => (prev + 1) % pictures.length);
-  };
-
-  const prevImage = () => {
-    setCurrent((prev) => (prev === 0 ? pictures.length - 1 : prev - 1));
-  };
-
+const Gallery = () => {
   return (
-    <div className="gallery">
-      <img src={pictures[current]} alt={`Slide ${current + 1}`} />
-      {pictures.length > 1 && (
-        <>
-          <button onClick={prevImage}>Précédent</button>
-          <button onClick={nextImage}>Suivant</button>
-        </>
-      )}
+    <div className={styled.gallery}>
+      {logements.map((logement) => (
+        <Link to={`/Logement/${logement.id}`} key={logement.id}>
+          <div className={styled.card}>
+            <img src={logement.cover} alt={logement.title} />
+            <h2>{logement.title}</h2>
+          </div>
+        </Link>
+      ))}
     </div>
   );
-}
+};
 
 export default Gallery;
