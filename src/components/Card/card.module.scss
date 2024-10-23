@@ -1,0 +1,18 @@
+.cadreCard {
+  /* Styles pour la carte */
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.coverImage {
+  width: 100%;
+  height: auto;
+}
+
+.locationName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}

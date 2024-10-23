@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import logements from "../../../public/logements.json"; // Assurez-vous que le chemin est correct
+import logements from "../../../public/logements.json";
 import styled from "./card.module.scss";
 
 const Card = () => {
