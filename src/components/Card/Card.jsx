@@ -1,16 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import logements from "../../../public/logements.json"; // Assurez-vous que le chemin est correct
+import styled from "./card.module.scss";
 
-function Card({ property }) {
+const Card = () => {
+  const { id } = useParams();
+  const logement = logements.find((logement) => logement.id === id);
+
   return (
-    <Link to={`/property/${property.id}`} className="card">
-      <img src={property.cover} alt={property.title} />
-      <div className="card-info">
-        <h3>{property.title}</h3>
-        <p>{property.location}</p>
-      </div>
-    </Link>
+    <div>
+      {logement ? (
+        <article className={styled.cadreCard}>
+          <img
+            className={styled.coverImage}
+            src={logement.cover}
+            alt={logement.title}
+          />
+          <h2 className={styled.locationName}>{logement.title}</h2>
+          <p>{logement.description}</p>
+          <p>Rating: {logement.rating}</p>
+        </article>
+      ) : (
+        <p>Logement non trouvé.</p>
+      )}
+    </div>
   );
-}
+};
 
 export default Card;
