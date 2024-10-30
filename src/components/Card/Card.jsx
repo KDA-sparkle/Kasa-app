@@ -1,29 +1,18 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import logements from "../../../public/logements.json";
-import styled from "./card.scss";
+import { Link } from "react-router-dom";
 
-const Card = () => {
-  const { id } = useParams();
-  const logement = logements.find((logement) => logement.id === id);
-
+const Card = (props) => {
+  // const styleCard = {
+  //     linearGradient: `(190deg, #fa7c30 30%, rgba(0, 0, 0, 0)30%), url(${props.logement.cover}`,
+  // };
   return (
-    <div>
-      {logement ? ( //termaire a noter
-        <article className={styled.cadreCard}>
-          <img
-            className={styled.coverImage}
-            src={logement.cover}
-            alt={logement.title}
-          />
-          <h2 className={styled.locationName}>{logement.title}</h2>
-          <p>{logement.description}</p>
-          <p>Rating: {logement.rating}</p>
-        </article>
-      ) : (
-        <p>Logement non trouvé.</p>
-      )}
-    </div>
+    <Link to={`fichelogement/${props.logement.id}`}>
+      <div className="card">
+        <img src={props.logement.cover} className="card__img " alt="profile" />
+        <div className="card__img__gradient"></div>
+        <h2 className="card__img__title">{props.logement.title}</h2>
+      </div>
+    </Link>
   );
 };
 
