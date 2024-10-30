@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import logements from "../../../public/logements.json";
-import styled from "./card.module.scss";
+import styled from "./card.scss";
 
 const Card = () => {
   const { id } = useParams();
@@ -9,7 +9,7 @@ const Card = () => {
 
   return (
     <div>
-      {logement ? (
+      {logement ? ( //termaire a noter
         <article className={styled.cadreCard}>
           <img
             className={styled.coverImage}

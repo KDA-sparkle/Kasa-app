@@ -1,28 +1,25 @@
-// main.scss
+/*Import utils CSS*/
+@import "./utils/variables";
+@import "./utils/maps";
+@import "./utils/mixins";
 
-// Importer des fichiers de styles
-@import "card";
-@import "collapse";
-@import "gallery";
-@import "rate";
-@import "tag";
-@import "user";
+/*Import bases CSS*/
+@import "./base/base";
+@import "./base/typography";
 
-// Styles globaux
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-  color: #333;
-}
+/*Import components CSS*/
+@import "./components/animations";
 
-h1,
-h2,
-h3 {
-  margin: 0;
-}
+/*Import layout CSS*/
+@import "./layout/nav";
+@import "./layout/header";
+@import "./layout/banner";
+@import "./layout/cards";
+@import "./layout/collapses";
+@import "./layout/error";
+@import "./layout/slides";
+@import "./layout/footer";
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+/*Import pages CSS*/
+@import "./pages/about";
+@import "./pages/fichelogement";
