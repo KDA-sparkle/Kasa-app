@@ -1,13 +1,42 @@
-import React, { useState } from "react";
-import styled from "./collapse.module.scss";
+import React from "react";
+import collapseUp from "../../assets/collapseup.png";
 
-const Collapse = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Collapse = (props) => {
+  const [collapse, setCollapse] = React.useState(props.open);
+  let content = [];
+
+  function handleClick() {
+    return setCollapse((prevCollapse) => !prevCollapse);
+  }
+
+  if (props.title === "Equipements") {
+    content = props.content.map((equipement) => <li>{equipement}</li>);
+  } else {
+    content = props.content;
+  }
 
   return (
-    <div className={styled.collapse}>
-      <button onClick={() => setIsOpen(!isOpen)}>{title}</button>
-      {isOpen && <div className={styled.content}>{children}</div>}
+    <div className="collapse">
+      <p className="collapse__title">
+        {props.title}
+        <img
+          src={collapseUp}
+          className={
+            collapse
+              ? "collapse__button collapse__up"
+              : "collapse__button collapse__down"
+          }
+          alt="collpase"
+          onClick={handleClick}
+        />
+      </p>
+      {collapse ? (
+        <div className="collapse__content">
+          <p>{content}</p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
