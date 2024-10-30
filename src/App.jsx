@@ -1,17 +1,28 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Importer les éléments de routage
+import { HashRouter, Routes, Route } from "react-router-dom";
+
+// Pages
 import Home from "./pages/Home";
-import About from "./Pages/About";
+import Apropos from "./pages/About";
+import Fichelogement from "./pages/Fichelogement";
+
+// Components
+import Layout from "./components/Layout";
+import Error from "./components/Error/index.jsx";
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <Routes>
-        <Route path="/" element={<Home />} /> // Route pour la galerie
-        <Route path="/About" element={<About />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/apropos" element={<Apropos />} />
+          <Route path="/fichelogement/:id" element={<Fichelogement />} />
+          <Route path="*" element={<Error />} />
+        </Route>
       </Routes>
-    </Router>
+    </HashRouter>
   );
 };
 
-export default App; // Exporter le composant App
+export default App;
