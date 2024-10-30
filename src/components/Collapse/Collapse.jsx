@@ -1,4 +1,3 @@
-import React from "react";
 import collapseUp from "../../assets/collapseup.png";
 
 const Collapse = (props) => {

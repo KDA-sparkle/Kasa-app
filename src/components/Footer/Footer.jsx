@@ -1,4 +1,3 @@
-import React from "react";
 import Logofooter from "../../assets/logofooter.png";
 import { Link } from "react-router-dom";
 

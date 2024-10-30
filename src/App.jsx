@@ -1,14 +1,13 @@
-import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 // Pages
-import Home from "./pages/Home";
-import Apropos from "./pages/About";
-import Fichelogement from "./pages/Fichelogement";
+import Home from "./Pages/Home.jsx";
+import Apropos from "./Pages/About.jsx";
+import Fichelogement from "./Pages/Fichelogement.jsx";
 
 // Components
-import Layout from "./components/Layout";
-import Error from "./components/Error/index.jsx";
+import Layout from "./components/Layout/Layout.jsx";
+import Error from "./components/Error/Error.jsx";
 
 const App = () => {
   return (
