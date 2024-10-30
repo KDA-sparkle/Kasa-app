@@ -14,7 +14,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "watch-css": "sass src/styles/main.scss src/styles/main.css --watch"
+    "watch-css": "sass src/styles/main.scss src/styles/css/main.css --watch"
   },
   "eslintConfig": {
     "extends": [
