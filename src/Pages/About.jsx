@@ -1,14 +1,12 @@
-import React from "react";
-
-import Banner from "../components/Banner";
-import Collapase from "../components/Collapse/index.jsx";
+import Banner from "../components/Banner/Banner";
+import Collapse from "../components/Collapse/Collapse";
 
 const Apropos = () => {
   return (
     <section>
       <Banner h1={false} div="about" />
       <div className="collapsesList">
-        <Collapase
+        <Collapse
           title="Fiabilité"
           content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes."
           open={false}

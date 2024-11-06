@@ -1,15 +1,35 @@
-import { Navigate, useParams } from "react-router-dom";
-import cardsData from "../logements.json";
+import { useParams } from "react-router-dom";
 
-import Slideshow from "../components/Slideshow";
-import Collapse from "../components/Collapse";
 import starColor from "../assets/star_rate_color.svg";
 import starGray from "../assets/star_rate_gray.svg";
+import { useEffect, useState } from "react";
+import Slideshow2 from "../components/Slideshow/Slideshow";
+import Collapse from "../components/Collapse/Collapse";
 
 const Fichelogement = () => {
+  const [data, setData] = useState([]);
   const params = useParams();
   let starRating = [];
   //console.log(params.id);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/logements.json");
+        if (!response.ok) {
+          throw new Error("Erreur : " + response.status);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error("Erreur lorss de la récupération des donnees :", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(data, "data logements");
 
   const logement = cardsData.find((logement) => logement.id === params.id);
   if (logement) {
@@ -36,7 +56,7 @@ const Fichelogement = () => {
 
     return (
       <section className="ficheLogement">
-        <Slideshow imagesUrl={imagesUrl} />
+        <Slideshow2 imagesUrl={imagesUrl} />
         <div className="ficheLogement__index">
           <div className="ficheLogement__main">
             <h1>{logement.title}</h1>
