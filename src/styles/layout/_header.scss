@@ -1,8 +1,0 @@
-.header {
-  padding-top: $layout-mobile-padding;
-  padding-bottom: 20px;
-  @include desktop-only {
-    padding-top: $layout-desktop-padding;
-    padding-bottom: 20px;
-  }
-}

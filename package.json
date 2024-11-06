@@ -1,29 +1,31 @@
 {
-  "name": "kasa-app",
-  "version": "1.0.0",
+  "name": "kasa-vite",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.1",
-    "vite": "^4.0.0",
-    "@vitejs/plugin-react": "^3.0.0"
-  },
-  "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "watch-css": "sass src/styles/main.scss src/styles/css/main.css --watch"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
-    "sass": "^1.62.1",
-    "axios": "^1.4.0"
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "gh-pages": "^6.1.1",
+    "sass": "^1.74.1",
+    "vite": "^5.2.0"
   }
 }

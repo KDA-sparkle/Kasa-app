@@ -1,17 +1,18 @@
-import Banner from "../components/Banner/Banner";
-import Card from "../components/Card/Card";
+import React from "react";
+import Banner from "../Components/Banner";
+import Navbar from "../Components/Navbar";
+import BackgroundHome from "../Assets/imgs/home-bg.jpg";
+import GridCards from "../Components/GridCards";
+import Footer from "../Components/Footer";
 
-const Home = () => {
-  const cardElements = cardsData.map((data) => {
-    return <Card key={data.id} logement={data} />;
-  });
-
-  return (
-    <div>
-      <Banner h1={true} title=" Chez vous, partout et ailleurs" div="home" />
-      <section className="cardsList">{cardElements}</section>
-    </div>
-  );
-};
-
-export default Home;
+export default function Home() {
+	const title = "Chez vous, partout et ailleurs";
+	return (
+		<section className="home">
+			<Navbar />
+			<Banner bg={BackgroundHome} title={title} />
+			<GridCards />
+			<Footer />
+		</section>
+	);
+}
