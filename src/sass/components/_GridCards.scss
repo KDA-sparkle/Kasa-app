@@ -1,0 +1,23 @@
+@import "../pages/Settings";
+
+.grid-cards {
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  padding: 50px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-radius: 25px;
+  gap: 50px 1%;
+  background: $tertiary-color;
+}
+
+@media (max-width: 820px) {
+  .grid-cards {
+    padding: 0;
+    background: none;
+    gap: 20px;
+  }
+}

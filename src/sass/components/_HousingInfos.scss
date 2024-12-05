@@ -1,0 +1,108 @@
+@import "../pages/Settings";
+
+.housing-infos{
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(14px, 2vw, 18px);
+    color: $secondary-color;
+
+    .top-infos{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 26px;
+
+        .title-location-tags-container{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .housing-title{
+            font-size: clamp(18px, 3vw, 36px);
+            font-weight: bold;
+        }
+
+        .tags-box,
+        .host-box,
+        .stars-box{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tags-box{
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .tag{
+            width: auto;
+            height: clamp(18px, 4vw, 25px);
+            border-radius: 10px;
+            padding: 0 30px;
+            border: none;
+            font-size: clamp(10px, 2vw, 14px);
+            font-family: 'Montserrat', sans-serif;
+            color: $primary-color;
+            background: $secondary-color;
+        }
+        
+        .host-stars-container{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 1vw;
+        }
+
+        @media (max-width: 820px){
+            .host-stars-container{
+                width: 100%;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        
+        .host-name{
+            width: 80px;
+            text-align: end;
+        }
+        
+        .host-picture{
+            width: clamp(32px, 10vw, 64px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+        
+        .stars-box img{
+            width: clamp(15px, 4vw, 30px);
+            aspect-ratio: 1;
+        }
+    }
+    
+    .collapse-infos{
+        display: flex;
+        justify-content: baseline;
+        gap: 76px;
+    }
+
+    @media (max-width: 820px){
+        .collapse-infos{
+            flex-direction: column;
+            gap: 0px;
+        }
+    }
+}
+
+@media (max-width: 820px){
+    .top-infos{
+        flex-direction: column;
+    }
+}
